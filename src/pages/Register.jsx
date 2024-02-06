@@ -7,14 +7,12 @@ import {
     Paper,
     Group,
     Button,
-    Checkbox,
     Anchor,
     Stack,
     Box,
-    Flex,
 } from '@mantine/core';
 
-export default function SignIn() {
+export default function Register() {
     const [type, toggle] = useToggle(['login', 'register']);
     const form = useForm({
         initialValues: {
@@ -33,7 +31,7 @@ export default function SignIn() {
     return (
         <Box
             style={() => ({
-                height: '100%',
+                height: '100vh',
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
@@ -41,15 +39,16 @@ export default function SignIn() {
             })}
 
         >
-            <Paper radius="md" p="xl" withBorder maw={350}>
-                <Text size="lg" fw={500}>
-                    Welcome to Mantine, {type} with
+            <Paper radius="md" p="xl" mx={'xl'} withBorder maw={320}>
+                <Text size="lg" fw={500} mb={'lg'} style={{ textAlign: 'center' }}>
+                    Welcome, {type}
                 </Text>
 
                 <form onSubmit={form.onSubmit(() => { })}>
                     <Stack>
                         {type === 'register' && (
                             <TextInput
+                                color='grape'
                                 label="Name"
                                 placeholder="Your name"
                                 value={form.values.name}
@@ -59,6 +58,8 @@ export default function SignIn() {
                         )}
 
                         <TextInput
+                            color='grape'
+
                             required
                             label="Email"
                             placeholder="hello@example.com"
@@ -69,6 +70,8 @@ export default function SignIn() {
                         />
 
                         <PasswordInput
+                            color='grape'
+
                             required
                             label="Password"
                             placeholder="Your password"
@@ -77,25 +80,19 @@ export default function SignIn() {
                             error={form.errors.password && 'Password should include at least 6 characters'}
                             radius="md"
                         />
-
-                        {type === 'register' && (
-                            <Checkbox
-                                label="I accept terms and conditions"
-                                checked={form.values.terms}
-                                onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
-                            />
-                        )}
                     </Stack>
 
-                    <Group justify="space-between" mt="xl">
+                    <Group justify="space-between" mt="lg">
                         <Anchor component="button" type="button" c="dimmed" onClick={() => toggle()} size="xs">
                             {type === 'register'
                                 ? 'Already have an account? Login'
                                 : "Don't have an account? Register"}
                         </Anchor>
-                        <Button type="submit" color='grape' radius="xl">
-                            {upperFirst(type)}
-                        </Button>
+                        <Group justify="flex-end" w={'100%'}>
+                            <Button type="submit" color='grape' radius="xl">
+                                {upperFirst(type)}
+                            </Button>
+                        </Group>
                     </Group>
                 </form>
             </Paper>

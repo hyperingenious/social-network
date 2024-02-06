@@ -1,0 +1,10 @@
+.createPost {
+    background-color: var(--mantine-color-grape-9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(50px);
+    height: rem(50px);
+    border-radius: 100%;
+    
+  }

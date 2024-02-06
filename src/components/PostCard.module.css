@@ -1,0 +1,6 @@
+.postCard {
+  width: 100%;
+  padding: var(--mantine-spacing-md);
+  border-bottom: 1px solid gray;
+  cursor: pointer;
+}
