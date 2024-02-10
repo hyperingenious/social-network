@@ -1,23 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import filterLineGraphSlice from "./dashboard/filterLineGraphSlice";
-// import filterPieGraphSlice from "./dashboard/filterPieGraphSlice";
-// import filterHorizontalBarGraphSlice from "./dashboard/filterHorizontalBarGraphSlice";
-// import filterReviewsSlice from "./reviews/filterReviewsSlice";
-// import filterSquareGraphSlice from "./dashboard/filterSquareGraphSlice";
-// import { reducer } from "./fetchReviewDataSlice";
-// import authSlice from "./authSlice";
+import authSlice from "./authSlice";
+import postSlice from "./postSlice";
+import commentSlice from "./commentSlice";
+import profileSlice from "./profileSlice";
+import peopleToFollowSlice from "./peopleToFollowSlice";
 
 const store = configureStore({
   reducer: {
-    // auth: authSlice,
-
-    // reviewData: reducer,
-
-    // lineGraphFilter: filterLineGraphSlice,
-    // pieGraphFilter: filterPieGraphSlice,
-    // horizontalBarGraphFilter: filterHorizontalBarGraphSlice,
-    // reviewsFilter: filterReviewsSlice,
-    // three100SquareFilter: filterSquareGraphSlice,
+    auth: authSlice,
+    post: postSlice,
+    comment: commentSlice,
+    profile: profileSlice,
+    peopleToFollow: peopleToFollowSlice
   },
 });
 

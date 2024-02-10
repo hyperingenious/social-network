@@ -3,9 +3,9 @@ import AppShell
   from "./pages/layouts/AppShell"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
-import Notifications from "./pages/Notifications"
 import Profile from "./pages/Profile"
 import Search from "./pages/Search"
+import PeopleToFollow from "./pages/PeopleToFollow"
 
 function App() {
   return (
@@ -13,9 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<AppShell />}>
           <Route path="home" element={<Home />} />
-          <Route path="notifications" element={<Notifications />} />
           <Route path="profile" element={<Profile />} />
           <Route path="search" element={<Search />} />
+          <Route path="peopleToFollow" element={<PeopleToFollow />} />
         </Route>
         <Route path="/register" element={<Register />} />
       </Routes>

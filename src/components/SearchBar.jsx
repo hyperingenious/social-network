@@ -10,7 +10,7 @@ export default function SearchBar() {
             style={{ zIndex: 10 }}
             radius="xl"
             size="md"
-            placeholder="Search questions"
+            placeholder="Search users"
             rightSectionWidth={42}
             leftSection={<IconSearch style={{ width: rem(18), height: rem(18) }} stroke={1.5} />}
             rightSection={
